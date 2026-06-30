@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "routes": [
+    { "src": "^/$", "dest": "/paging-simulator/index.html" },
+    { "src": "^/(.*)$", "dest": "/paging-simulator/$1" }
+  ]
+}

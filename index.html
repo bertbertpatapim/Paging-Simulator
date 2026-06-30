@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paging Simulator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-orb orb-1"></div>
+    <div class="background-orb orb-2"></div>
+
+    <div class="app-shell">
+      <header class="hero glass-card">
+        <div class="hero-content">
+          <p class="eyebrow">Interactive OS Concept Lab</p>
+          <h1>Paging Simulator</h1>
+          <p>
+            Explore FIFO and LRU page replacement with an animated, step-by-step
+            learning experience.
+          </p>
+        </div>
+        <button id="themeToggle" class="ghost-btn" type="button">🌙 Dark Mode</button>
+      </header>
+
+      <main class="main-grid">
+        <section class="controls glass-card">
+          <h2>Simulation Setup</h2>
+          <form id="simForm" novalidate>
+            <label class="input-group" for="referenceInput">
+              <span>Page Reference String</span>
+              <input
+                id="referenceInput"
+                name="referenceInput"
+                type="text"
+                placeholder="Example: 1 2 3 1 4 3 5"
+                autocomplete="off"
+              />
+            </label>
+
+            <label class="input-group" for="framesInput">
+              <span>Number of Frames</span>
+              <input
+                id="framesInput"
+                name="framesInput"
+                type="number"
+                min="1"
+                step="1"
+                placeholder="3"
+              />
+            </label>
+
+            <label class="input-group" for="algorithmSelect">
+              <span>Replacement Algorithm</span>
+              <select id="algorithmSelect" name="algorithmSelect">
+                <option value="fifo">FIFO</option>
+                <option value="lru">LRU</option>
+              </select>
+            </label>
+
+            <div class="button-row">
+              <button class="primary-btn" type="submit">Simulate</button>
+              <button class="secondary-btn" id="resetBtn" type="button">Reset</button>
+              <button class="ghost-btn" id="sampleBtn" type="button">Load Sample Data</button>
+            </div>
+
+            <div id="statusMessage" class="status-message" role="status" aria-live="polite"></div>
+          </form>
+
+        </section>
+
+        <section class="results">
+          <section class="glass-card">
+            <div class="section-heading">
+              <h2>Paging Table</h2>
+            </div>
+            <div class="table-wrapper paging-table-wrapper">
+              <table id="pagingTable">
+                <thead>
+                  <tr id="pagingHeaderRow">
+                    <th>Step</th>
+                    <th>Reference</th>
+                    <th>Outcome</th>
+                  </tr>
+                </thead>
+                <tbody id="pagingRows"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="glass-card">
+            <div class="section-heading">
+              <h2>Solution Timeline</h2>
+            </div>
+            <div id="solutionSummary" class="table-wrapper"></div>
+          </section>
+
+          <section class="glass-card">
+            <div class="section-heading">
+              <h2>Simulation Statistics</h2>
+            </div>
+            <div id="statsGrid" class="stats-grid"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js?cb=3"></script>
+  </body>
+</html>
