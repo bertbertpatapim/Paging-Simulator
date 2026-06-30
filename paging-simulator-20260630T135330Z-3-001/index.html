@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paging Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="simForm">
+    <input id="referenceInput" placeholder="Enter references">
+    <input id="framesInput" type="number" placeholder="Frames">
+    <select id="algorithmSelect">
+      <option value="fifo">FIFO</option>
+      <option value="lru">LRU</option>
+    </select>
+    <button type="submit">Run</button>
+  </form>
+  <div id="statusMessage"></div>
+  <table>
+    <thead id="pagingHeaderRow"></thead>
+    <tbody id="pagingRows"></tbody>
+  </table>
+  <div id="solutionSummary"></div>
+  <div id="statsGrid"></div>
+  <button id="resetBtn">Reset</button>
+  <button id="sampleBtn">Sample</button>
+  <button id="themeToggle">🌙 Dark Mode</button>
+  <script src="script.js"></script>
+</body>
+</html>
